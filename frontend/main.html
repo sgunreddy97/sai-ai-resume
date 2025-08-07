@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Teja Reddy - AI/ML Engineer | Interactive Resume</title>
+    <meta name="description" content="Interactive resume of Sai Teja Reddy - AI/ML Engineer with 5+ years experience in machine learning, deep learning, and data science.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading AI Experience...</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SAI TEJA REDDY</span>
+                <span class="logo-subtitle">AI Engineer</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="download-btn" onclick="downloadResume()">📄 Resume</button>
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                <button class="back-to-intro" onclick="goBackToIntro()">← Intro</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Home Section -->
+        <section id="home" class="section home-section active">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="hero-title">
+                        <span class="greeting">Hello! I'm</span>
+                        <span class="name">Sai Teja Reddy</span>
+                        <span class="role">AI/ML Engineer & Innovation Catalyst</span>
+                    </h1>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100M+</span>
+                            <span class="stat-label">Daily Events Processed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">41%</span>
+                            <span class="stat-label">Query Resolution Improvement</span>
+                        </div>
+                    </div>
+                    
+                    <p class="hero-description">
+                        Passionate AI/ML Engineer with production experience in building scalable AI systems, 
+                        fine-tuning LLMs, and creating intelligent solutions that drive business value. 
+                        Currently pursuing Master's in AI while solving real-world problems with cutting-edge technology.
+                    </p>
+                    
+                    <div class="cta-buttons">
+                        <button class="cta-primary" onclick="openChatBot()">
+                            🤖 Chat with my AI Twin
+                        </button>
+                        <button class="cta-secondary" onclick="scrollToSection('projects')">
+                            View Projects →
+                        </button>
+                    </div>
+                    
+                    <div class="quick-links">
+                        <a href="mailto:saitejareddyg97@gmail.com" class="quick-link">
+                            ✉️ saitejareddyg97@gmail.com
+                        </a>
+                        <a href="https://www.linkedin.com/in/sai-teja-reddy-b5846322b/" class="quick-link" target="_blank">
+                            🔗 LinkedIn Profile
+                        </a>
+                        <a href="tel:+12488033210" class="quick-link">
+                            📞 +1 (248) 803-3210
+                        </a>
+                        <span class="quick-link location">
+                            📍 Edmond, Oklahoma, USA
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="assets/images/profile.jpg" alt="Sai Teja Reddy" id="profileImg">
+                            <div class="profile-overlay">
+                                <div class="tech-icons">
+                                    <span class="tech-icon">🐍</span>
+                                    <span class="tech-icon">🤖</span>
+                                    <span class="tech-icon">☁️</span>
+                                    <span class="tech-icon">🧠</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            Available for opportunities
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="intro-text">
+                            I'm a passionate AI/ML Engineer who believes in using technology to create meaningful impact. 
+                            With 5+ years of production experience, I've built AI systems that process millions of events 
+                            daily and solve real-world problems across telecommunications, finance, and education sectors.
+                        </p>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <h4>🎯 Mission</h4>
+                                <p>To leverage artificial intelligence and machine learning to solve complex problems, 
+                                educate others, and create positive societal impact while continuously learning and growing.</p>
+                            </div>
+                            
+                            <div class="highlight-item">
+                                <h4>💡 Philosophy</h4>
+                                <p>Education is the key to everything. I believe in using technology to lift people up 
+                                and create opportunities for those who need it most. My goal is to adopt and educate 
+                                10 underprivileged children.</p>
+                            </div>
+                            
+                            <div class="highlight-item">
+                                <h4>🚀 Passion</h4>
+                                <p>I love exploring the mysteries of space, the beauty of mathematics, and the endless 
+                                possibilities of AI. Whether it's fine-tuning LLMs or camping under the stars, 
+                                I'm always curious about how things work.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="personality-cloud">
+                            <span class="trait">Problem Solver</span>
+                            <span class="trait">Team Player</span>
+                            <span class="trait">Curious Mind</span>
+                            <span class="trait">Tech Enthusiast</span>
+                            <span class="trait">Nature Lover</span>
+                            <span class="trait">Mentor</span>
+                            <span class="trait">Innovator</span>
+                            <span class="trait">Space Explorer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-content">
+                    <div class="skills-categories">
+                        <div class="skill-category" data-category="ml">
+                            <h3 class="category-title">🤖 AI/ML Frameworks</h3>
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill="tensorflow">
+                                    <span class="skill-name">TensorFlow</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                                </div>
+                                <div class="skill-item" data-skill="pytorch">
+                                    <span class="skill-name">PyTorch</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item" data-skill="huggingface">
+                                    <span class="skill-name">Hugging Face</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                                </div>
+                                <div class="skill-item" data-skill="langchain">
+                                    <span class="skill-name">LangChain</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category" data-category="cloud">
+                            <h3 class="category-title">☁️ Cloud Platforms</h3>
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill="aws">
+                                    <span class="skill-name">AWS</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                                </div>
+                                <div class="skill-item" data-skill="gcp">
+                                    <span class="skill-name">Google Cloud</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                                </div>
+                                <div class="skill-item" data-skill="azure">
+                                    <span class="skill-name">Azure</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category" data-category="programming">
+                            <h3 class="category-title">💻 Programming</h3>
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill="python">
+                                    <span class="skill-name">Python</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 98%"></div></div>
+                                </div>
+                                <div class="skill-item" data-skill="sql">
+                                    <span class="skill-name">SQL</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item" data-skill="r">
+                                    <span class="skill-name">R</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-visual">
+                        <div class="skill-radar">
+                            <canvas id="skillsRadar" width="300" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-experience="ericsson">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <h3 class="job-title">Machine Learning Engineer</h3>
+                                <div class="company-info">
+                                    <span class="company">Ericsson Canada</span>
+                                    <span class="location">Ottawa, Ontario</span>
+                                    <span class="duration">Mar 2022 - Jul 2024</span>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <p class="experience-summary">
+                                    Led AI initiatives for telecom networks, building production-scale systems 
+                                    that processed 100M+ daily customer events and reduced query resolution time by 41%.
+                                </p>
+                                <ul class="achievements-list">
+                                    <li>Fine-tuned transformer-based LLMs for network diagnostics conversational bots</li>
+                                    <li>Implemented RAG systems with LangChain, Pinecone, and FAISS</li>
+                                    <li>Automated ML workflows reducing deployment time from 5 days to 6 hours</li>
+                                    <li>Conducted SHAP-based explainability audits for regulatory compliance</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">LangChain</span>
+                                    <span class="tech-tag">AWS SageMaker</span>
+                                    <span class="tech-tag">Docker</span>
+                                    <span class="tech-tag">MLflow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-experience="cash4you">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <h3 class="job-title">Data Scientist</h3>
+                                <div class="company-info">
+                                    <span class="company">Cash4You Inc.</span>
+                                    <span class="location">Cambridge, Ontario</span>
+                                    <span class="duration">Jun 2021 - Feb 2022</span>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <p class="experience-summary">
+                                    Developed predictive models for credit scoring and fraud detection, 
+                                    achieving 23% reduction in loan defaults and 18% decrease in application fraud.
+                                </p>
+                                <ul class="achievements-list">
+                                    <li>Built XGBoost and LightGBM models outperforming legacy systems</li>
+                                    <li>Engineered 70+ features from multi-source datasets</li>
+                                    <li>Created real-time fraud detection API using Flask</li>
+                                    <li>Received spotlight award for AI-driven fraud engine</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">XGBoost</span>
+                                    <span class="tech-tag">LightGBM</span>
+                                    <span class="tech-tag">Flask</span>
+                                    <span class="tech-tag">Tableau</span>
+                                    <span class="tech-tag">Airflow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-project="llm-finetuning">
+                        <div class="project-image">
+                            <div class="project-icon">🤖</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">LLM Classification Fine-Tuning</h3>
+                            <p class="project-description">
+                                Complete pipeline for fine-tuning DistilBERT on instruction prompt pairs 
+                                with 87% accuracy on validation set.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Hugging Face</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">DistilBERT</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="project-btn" onclick="showProjectDetails('llm-finetuning')">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-project="speech-recognition">
+                        <div class="project-image">
+                            <div class="project-icon">🗣️</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">HCU Speech Recognition</h3>
+                            <p class="project-description">
+                                Multilingual speech recognition pipeline combining Thai ASR and 
+                                English translation using transformer models.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Wav2Vec2</span>
+                                <span class="tech-tag">MarianMT</span>
+                                <span class="tech-tag">librosa</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="project-btn" onclick="showProjectDetails('speech-recognition')">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-project="bus-identification">
+                        <div class="project-image">
+                            <div class="project-icon">🚌</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Bus Identification for Vision Impaired</h3>
+                            <p class="project-description">
+                                IoT solution helping visually impaired individuals identify buses 
+                                through audio announcements at stations.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">RF Communication</span>
+                                <span class="tech-tag">IoT</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="project-btn" onclick="showProjectDetails('bus-identification')">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="section">
+            <div class="container">
+                <h2 class="section-title">Interests & Hobbies</h2>
+                <div class="hobbies-content">
+                    <div class="hobby-category">
+                        <h3 class="hobby-title">🌟 Technology & Learning</h3>
+                        <div class="hobby-items">
+                            <span class="hobby-item">AI Research</span>
+                            <span class="hobby-item">Open Source Contribution</span>
+                            <span class="hobby-item">Space Technology</span>
+                            <span class="hobby-item">Mathematics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-category">
+                        <h3 class="hobby-title">🏕️ Outdoor Adventures</h3>
+                        <div class="hobby-items">
+                            <span class="hobby-item">Camping</span>
+                            <span class="hobby-item">Fishing</span>
+                            <span class="hobby-item">Rock Climbing</span>
+                            <span class="hobby-item">Nature Photography</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-category">
+                        <h3 class="hobby-title">🎬 Personal Interests</h3>
+                        <div class="hobby-items">
+                            <span class="hobby-item">Movies</span>
+                            <span class="hobby-item">Chess</span>
+                            <span class="hobby-item">Cooking</span>
+                            <span class="hobby-item">Teaching</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Ready to build the future together?</h3>
+                        <p>I'm always excited to discuss AI/ML opportunities, innovative projects, or just chat about technology and space exploration!</p>
+                        
+                        <div class="contact-methods">
+                            <a href="mailto:saitejareddyg97@gmail.com" class="contact-method">
+                                <span class="contact-icon">✉️</span>
+                                <span class="contact-text">saitejareddyg97@gmail.com</span>
+                            </a>
+                            <a href="tel:+12488033210" class="contact-method">
+                                <span class="contact-icon">📞</span>
+                                <span class="contact-text">+1 (248) 803-3210</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sai-teja-reddy-b5846322b/" class="contact-method" target="_blank">
+                                <span class="contact-icon">🔗</span>
+                                <span class="contact-text">LinkedIn Profile</span>
+                            </a>
+                            <div class="contact-method">
+                                <span class="contact-icon">📍</span>
+                                <span class="contact-text">Edmond, Oklahoma, USA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="availability">
+                            <span class="status-indicator">
+                                <span class="status-dot active"></span>
+                                Available for opportunities
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <div class="bot-info">
+                <div class="bot-avatar">🤖</div>
+                <div class="bot-details">
+                    <span class="bot-name">AI Twin</span>
+                    <span class="bot-status">Online</span>
+                </div>
+            </div>
+            <div class="chat-controls">
+                <button class="mode-toggle" id="modeToggle" onclick="toggleChatMode()">
+                    <span id="modeText">Strict</span>
+                </button>
+                <button class="minimize-btn" onclick="minimizeChat()">−</button>
+                <button class="close-btn" onclick="closeChat()">×</button>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Ask me anything about Sai's experience...">
+            <button id="sendBtn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Floating Chat Button -->
+    <button class="chat-fab" id="chatFab" onclick="openChatBot()">
+        <span class="fab-icon">💬</span>
+    </button>
+
+    <!-- Text Selection Popup -->
+    <div class="text-popup" id="textPopup">
+        <button onclick="explainSelectedText()">Ask AI</button>
+    </div>
+
+    <!-- Resume Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <h3>Download Resume</h3>
+            <p>Which version would you like to download?</p>
+            <div class="download-options">
+                <button class="download-option" onclick="downloadResume('uploaded')">
+                    📄 Uploaded PDF Resume
+                </button>
+                <button class="download-option" onclick="downloadResume('dynamic')">
+                    🌐 Dynamic Web Resume
+                </button>
+            </div>
+            <button class="modal-close" onclick="closeModal('downloadModal')">×</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/analytics.js"></script>
+    <script src="assets/js/utils.js"></script>
+</body>
+</html>

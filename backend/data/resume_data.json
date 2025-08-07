@@ -1,0 +1,435 @@
+{
+  "personal_info": {
+    "name": "Sai Teja Reddy",
+    "title": "AI/ML Engineer & Data Scientist",
+    "email": "saitejareddyg97@gmail.com",
+    "phone": "+1 (248) 803-3210",
+    "location": "Edmond, Oklahoma, USA",
+    "linkedin": "https://www.linkedin.com/in/sai-teja-reddy-b5846322b/",
+    "github": "https://github.com/saitejareddy",
+    "summary": "Experienced AI/ML Engineer with 5+ years of production experience in machine learning, deep learning, and data science. Passionate about using technology to solve real-world problems and help others through education and innovation.",
+    "tagline": "Building AI solutions that make a difference 🚀"
+  },
+  "core_competencies": [
+    "End-to-End Machine Learning Development & Deployment",
+    "LLM Fine-Tuning, Prompt Engineering & Retrieval-Augmented Generation (RAG)",
+    "Real-Time Predictive Analytics & Data Streaming (Kafka, Spark, Hive)",
+    "NLP Systems for Intent Classification, Summarization, Named Entity Recognition",
+    "Model Evaluation, Optimization & Explainability (F1, AUC, SHAP, LIME)",
+    "Forecasting & Anomaly Detection in Time Series Data",
+    "CI/CD Pipelines, Containerization, MLflow, FastAPI & DevOps Tools",
+    "Cloud-Native AI on AWS, GCP & Azure",
+    "Data Wrangling, Feature Engineering, SQL Automation & Airflow ETL",
+    "Ethical AI, Data Governance & Privacy-Safe Model Design",
+    "Agile Development, Sprint Planning, & Cross-Functional Team Collaboration",
+    "Business Storytelling, Technical Documentation & Stakeholder Engagement"
+  ],
+  "experience": [
+    {
+      "title": "Machine Learning Engineer",
+      "company": "Ericsson Canada",
+      "location": "Ottawa, Ontario, Canada",
+      "start_date": "03/2022",
+      "end_date": "07/2024",
+      "duration": "2 years 5 months",
+      "responsibilities": [
+        "Designed, deployed, and maintained large-scale AI applications focused on real-time decision systems for telecom networks, supporting 100M+ customer events daily",
+        "Fine-tuned transformer-based LLMs for conversational bots handling network diagnostics using domain-specific corpora, reducing customer query resolution time by 41%",
+        "Developed custom tokenizers and vector stores to support semantic search on customer knowledge bases, improving top-3 hit accuracy to 92%",
+        "Led integration of retrieval-augmented generation (RAG) with LangChain into Ericsson's internal knowledge platform using Pinecone and FAISS",
+        "Delivered predictive modeling pipelines in AWS SageMaker to forecast radio signal degradation using 6+ months of real-time telemetry logs",
+        "Automated daily ML workflows via Airflow and integrated CI/CD using MLflow + Docker + GitHub Actions. Reduced model deployment lag from 5 days to under 6 hours",
+        "Conducted SHAP-based explainability audits for regulatory review of AI models in telecom automation",
+        "Partnered with security teams to implement model guardrails and monitor data drift, ensuring continued fairness and robustness",
+        "Led internal enablement sessions on LangChain-based RAG pipelines, prompt tuning workflows, and deployment best practices across multiple AI teams"
+      ],
+      "achievements": [
+        "Recognized as the go-to technical resource for all AI/ML initiatives within the North America division",
+        "Received cross-team recognition for model reproducibility and deployment standards",
+        "Presented research outcomes at internal innovation day"
+      ]
+    },
+    {
+      "title": "Data Scientist",
+      "company": "Cash4You Inc.",
+      "location": "Cambridge, Ontario, Canada",
+      "start_date": "06/2021",
+      "end_date": "02/2022",
+      "duration": "9 months",
+      "responsibilities": [
+        "Developed predictive credit scoring models using XGBoost and LightGBM that outperformed legacy logistic regression baselines, leading to a 23% reduction in loan default rates",
+        "Engineered over 70 features from transactional, demographic, and behavioral datasets to improve customer segmentation and targeting",
+        "Created real-time API for fraud detection scoring using Flask and integrated with internal loan processing application, reducing application fraud by 18%",
+        "Built dynamic dashboards in Tableau and Power BI for ongoing loan performance monitoring and risk forecasting",
+        "Automated ETL jobs using Python and Airflow to maintain pipeline reliability across multiple third-party data ingestion sources",
+        "Designed and conducted experiment-based uplift modeling to identify optimal email reminders for late payment reductions, increasing recovery rates by 12%"
+      ],
+      "achievements": [
+        "Received internal spotlight award for designing the AI-driven fraud engine adopted across three branches"
+      ]
+    },
+    {
+      "title": "Data Analyst",
+      "company": "SanSah Innovations",
+      "location": "Hyderabad, Telangana, India",
+      "start_date": "09/2018",
+      "end_date": "11/2019",
+      "duration": "1 year 3 months",
+      "responsibilities": [
+        "Collaborated with cross-functional teams to collect, validate, clean, and model customer sales and operational data, identifying revenue leakages",
+        "Developed reports and dashboards using Power BI and Excel to track key performance indicators, supporting monthly executive strategy meetings",
+        "Built customer lifetime value (CLTV) models using regression techniques and helped marketing teams run targeted loyalty campaigns",
+        "Created Excel-based simulators to forecast costs and returns of marketing campaigns under various budget scenarios",
+        "Supported cross-functional process automation initiative resulting in ~8% time savings per quarter in reporting operations"
+      ]
+    },
+    {
+      "title": "Graduate Assistant - Admissions",
+      "company": "Oklahoma Christian University",
+      "location": "Edmond, Oklahoma, USA",
+      "start_date": "08/2024",
+      "end_date": "Present",
+      "duration": "Current",
+      "responsibilities": [
+        "Built Excel automation tools that reduced application processing time by 40%",
+        "Conduct website audits and pitch campaign ideas for student recruitment",
+        "Create comprehensive student guides for visa applications and university processes",
+        "Provide technical support for admissions database and CRM systems",
+        "Assist international students with application processes and documentation"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science",
+      "field": "Computer Science - Artificial Intelligence",
+      "institution": "Oklahoma Christian University",
+      "location": "Edmond, Oklahoma, USA",
+      "start_date": "08/2024",
+      "end_date": "08/2025",
+      "gpa": "4.0",
+      "status": "In Progress",
+      "relevant_coursework": [
+        "Advanced Machine Learning",
+        "Deep Learning Systems",
+        "Natural Language Processing",
+        "Computer Vision",
+        "AI Ethics and Governance",
+        "Statistical Learning Theory"
+      ]
+    },
+    {
+      "degree": "PG Diploma",
+      "field": "IT Business Analysis",
+      "institution": "Conestoga College",
+      "location": "Kitchener, Ontario, Canada",
+      "start_date": "01/2020",
+      "end_date": "05/2021",
+      "gpa": "3.8",
+      "relevant_coursework": [
+        "Database Design and SQL",
+        "Business Intelligence",
+        "Data Analytics",
+        "Project Management",
+        "System Analysis and Design"
+      ]
+    },
+    {
+      "degree": "Bachelor of Technology",
+      "field": "Electronics & Communication Engineering",
+      "institution": "JNTU Hyderabad",
+      "location": "Hyderabad, Telangana, India",
+      "start_date": "09/2014",
+      "end_date": "06/2018",
+      "gpa": "7.2/10.0",
+      "achievements": [
+        "Perfect mathematics scores (300/300) in high school",
+        "Top 1% in national competitive examinations",
+        "Founded robotics club and led IEEE student chapter activities"
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Python", "R", "SQL", "Shell Scripting", "JavaScript", "Bash"
+    ],
+    "ml_frameworks": [
+      "TensorFlow", "PyTorch", "Hugging Face Transformers", "Keras", "Scikit-learn", 
+      "OpenCV", "FastAI", "XGBoost", "LightGBM", "OpenAI API", "LangChain"
+    ],
+    "cloud_platforms": [
+      "AWS (SageMaker, Lambda, EC2, S3, CloudFormation)", 
+      "Google Cloud (Vertex AI, BigQuery)", 
+      "Microsoft Azure (Data Lake, ML Studio)"
+    ],
+    "big_data_tools": [
+      "Hadoop", "Apache Spark", "Hive", "Kafka", "MapReduce", 
+      "Airflow", "Snowflake", "Apache Beam"
+    ],
+    "databases": [
+      "PostgreSQL", "MySQL", "MongoDB", "Elasticsearch", "SQLite", "DynamoDB"
+    ],
+    "visualization_tools": [
+      "Power BI", "Tableau", "Excel", "Matplotlib", "Seaborn", "Plotly"
+    ],
+    "devops_mlops": [
+      "Docker", "GitHub Actions", "CI/CD", "Jenkins", "MLflow", 
+      "Flask", "FastAPI", "RESTful APIs", "Kubernetes"
+    ],
+    "nlp_libraries": [
+      "NLTK", "spaCy", "Gensim", "Transformers", "FAISS", "Pinecone"
+    ]
+  },
+  "projects": [
+    {
+      "title": "LLM Classification Fine-Tuning",
+      "description": "Designed and implemented a complete fine-tuning pipeline for binary classification of instruction prompt pairs using Hugging Face Transformers with DistilBERT",
+      "technologies": ["Python", "Hugging Face", "PyTorch", "DistilBERT", "Google Colab"],
+      "achievements": [
+        "Preprocessed 5,000+ prompt-completion pairs with pairwise formatting and token-level encoding",
+        "Achieved 87% accuracy on validation set using optimized hyperparameters",
+        "Created modular, reusable codebase for rapid experimentation and prototyping",
+        "Implemented comprehensive evaluation metrics and model performance tracking"
+      ],
+      "github": "https://github.com/saitejareddy/llm-classification-finetuning",
+      "demo": "Available upon request"
+    },
+    {
+      "title": "HCU Speech Recognition Challenge",
+      "description": "Developed a multilingual speech recognition and translation pipeline combining Thai ASR and English translation using state-of-the-art transformer models",
+      "technologies": ["Wav2Vec2", "MarianMT", "Hugging Face", "librosa", "Python"],
+      "achievements": [
+        "Integrated airesearch/wav2vec2-large-xlsr-53-th for Thai automatic speech recognition",
+        "Implemented Helsinki-NLP/opus-mt-th-en for accurate Thai-to-English translation",
+        "Built end-to-end pipeline processing audio files with real-time transcription and translation",
+        "Validated system across dialect-influenced audio samples and tone-heavy pronunciations"
+      ],
+      "github": "https://github.com/saitejareddy/hcu-speech-recognition",
+      "demo": "Live demo available"
+    },
+    {
+      "title": "Amazon Reviews Fine-Tuning",
+      "description": "Implemented parameter-efficient fine-tuning using LoRA (Low-Rank Adaptation) on GPT-2 for sentiment-aware text generation on Amazon product reviews",
+      "technologies": ["GPT-2", "LoRA", "PEFT", "Transformers", "Amazon Polarity Dataset"],
+      "achievements": [
+        "Reduced trainable parameters by 99% while maintaining model performance",
+        "Implemented 8-bit quantization for memory-efficient training",
+        "Created comparative analysis between full fine-tuning and parameter-efficient methods",
+        "Generated contextually relevant product review completions"
+      ],
+      "github": "https://github.com/saitejareddy/amazon-reviews-finetuning"
+    },
+    {
+      "title": "Bus Identification for Vision Impaired",
+      "description": "IoT solution helping visually impaired individuals identify approaching buses through audio announcements at bus stations",
+      "technologies": ["Arduino", "RF Communication", "Audio Processing", "Sensors"],
+      "achievements": [
+        "Designed RF-based communication between buses and bus stops",
+        "Implemented real-time audio announcement system",
+        "Created backup phone-based notification system",
+        "Received university innovation award for social impact"
+      ],
+      "impact": "Improved accessibility and independence for visually impaired commuters"
+    },
+    {
+      "title": "Smart Shopping Trolley",
+      "description": "Automated checkout system using sensor technology to detect items added/removed from shopping carts, enabling seamless store experiences",
+      "technologies": ["RFID", "Weight Sensors", "Arduino", "Database Integration"],
+      "achievements": [
+        "Developed real-time item detection and cart management",
+        "Integrated with store inventory and billing systems",
+        "Reduced checkout time by 60% in pilot testing",
+        "Created user-friendly interface for customers and staff"
+      ]
+    },
+    {
+      "title": "Mobile Phone Detector",
+      "description": "RF-based detection system for identifying unauthorized mobile phone usage in restricted areas like examination halls or secure facilities",
+      "technologies": ["RF Detection", "Signal Processing", "Arduino", "Alert Systems"],
+      "achievements": [
+        "Accurately detects mobile phone frequencies within 10-meter radius",
+        "Implemented adjustable sensitivity for different security levels",
+        "Created both audio and visual alert mechanisms",
+        "Successfully deployed in educational institutions"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Salesforce Certified AI Associate",
+      "issuer": "Salesforce",
+      "date": "2024",
+      "credential_id": "Available upon request"
+    },
+    {
+      "name": "Salesforce Certified AI Specialist",
+      "issuer": "Salesforce",
+      "date": "2024",
+      "credential_id": "Available upon request"
+    },
+    {
+      "name": "AWS Certified Developer – Associate",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credential_id": "Available upon request"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Academic Excellence",
+      "description": "Consistently ranked in top 1% in national competitive examinations including NTSE, Mathematics Olympiad, and National Level Science Talent Search",
+      "year": "2012-2018"
+    },
+    {
+      "title": "Innovation Recognition",
+      "description": "Received university chairman's appreciation for innovative IoT projects during undergraduate exhibitions",
+      "year": "2017-2018"
+    },
+    {
+      "title": "Community Impact",
+      "description": "Founded street cause club that funded and established a school for underprivileged children in rural villages",
+      "year": "2016-2019"
+    },
+    {
+      "title": "Professional Recognition",
+      "description": "Selected as go-to technical resource for AI/ML initiatives across Ericsson North America division",
+      "year": "2023-2024"
+    }
+  ],
+  "hobbies": [
+    {
+      "category": "Technology & Learning",
+      "activities": [
+        "Exploring cutting-edge AI research and implementing new techniques",
+        "Contributing to open-source ML projects on GitHub",
+        "Reading research papers on generative AI and multimodal learning",
+        "Experimenting with new frameworks and tools in personal projects",
+        "Following space technology developments and SpaceX missions"
+      ]
+    },
+    {
+      "category": "Outdoor Adventures",
+      "activities": [
+        "Camping and hiking in national parks",
+        "Fishing and peaceful time by lakes and rivers",
+        "Adventure sports like rock climbing and kayaking",
+        "Photography of nature and landscapes during travels",
+        "Exploring new places and cultures"
+      ]
+    },
+    {
+      "category": "Personal Interests",
+      "activities": [
+        "Watching movies across all genres (especially sci-fi)",
+        "Playing chess and solving mathematical puzzles",
+        "Cooking traditional Indian dishes",
+        "Teaching and mentoring students in mathematics and programming",
+        "Reading about philosophy, space exploration, and human consciousness"
+      ]
+    },
+    {
+      "category": "Social Impact",
+      "activities": [
+        "Planning to adopt and educate 10 underprivileged children",
+        "Volunteering for educational initiatives in rural communities",
+        "Organizing tech workshops for students",
+        "Helping friends and family with career guidance",
+        "Using technology to solve social problems"
+      ]
+    }
+  ],
+  "interests": [
+    "Artificial Intelligence and Machine Learning",
+    "Space Exploration and Astronomy",
+    "Mathematics and Competitive Problem Solving",
+    "Educational Technology and Social Impact",
+    "Philosophy and Questions about Existence",
+    "Adventure Travel and Nature Photography",
+    "Emerging Technologies and Innovation",
+    "Mentoring and Teaching",
+    "Sustainable Technology Solutions"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Fluent (Professional)"
+    },
+    {
+      "language": "Telugu",
+      "proficiency": "Native"
+    },
+    {
+      "language": "Hindi",
+      "proficiency": "Conversational"
+    }
+  ],
+  "personality_traits": [
+    "Naturally curious and always eager to learn new technologies",
+    "Strong problem-solving mindset with mathematical thinking",
+    "Excellent communicator who can explain complex concepts simply",
+    "Team player who enjoys helping others succeed",
+    "Adaptable and quick to pick up new skills and frameworks",
+    "Passionate about using technology for social good",
+    "Detail-oriented with focus on code quality and best practices",
+    "Entrepreneurial mindset with innovative thinking",
+    "Positive attitude and jovial personality",
+    "Strong work ethic with commitment to continuous improvement"
+  ],
+  "philosophy": {
+    "career_mission": "To use artificial intelligence and technology to solve meaningful problems, educate others, and create positive impact in society while continuously learning and growing as both a technologist and human being.",
+    "core_values": [
+      "Education is the key to everything and everyone deserves access to quality learning",
+      "Technology should be used to lift people up and solve real-world problems",
+      "Continuous learning and adaptation are essential in the rapidly evolving AI field",
+      "Helping others succeed creates a ripple effect of positive change",
+      "Authenticity and honesty are crucial in both personal and professional relationships",
+      "Hard work combined with smart work leads to exceptional results"
+    ],
+    "life_goals": [
+      "Adopt and provide quality education to 10 underprivileged children",
+      "Build AI systems that have meaningful social impact",
+      "Become a recognized thought leader in ethical AI development",
+      "Establish educational programs for rural and underserved communities",
+      "Contribute to space exploration through AI and technology",
+      "Maintain strong relationships with family and friends while pursuing ambitions"
+    ]
+  },
+  "contact_preferences": {
+    "best_contact_method": "Email",
+    "response_time": "Within 24 hours",
+    "availability": "Open to opportunities in AI/ML, Data Science, and Technology Leadership roles",
+    "preferred_work_arrangement": "Hybrid or Remote-friendly",
+    "willing_to_relocate": true,
+    "open_to_travel": true
+  },
+  "testimonials": [
+    {
+      "source": "Former Manager at Ericsson",
+      "quote": "Sai consistently delivered exceptional results and became our go-to expert for complex AI implementations. His ability to explain technical concepts to non-technical stakeholders was invaluable.",
+      "context": "Performance Review"
+    },
+    {
+      "source": "University Professor",
+      "quote": "Sai's mathematical aptitude and innovative thinking were evident from day one. His projects always went beyond requirements and showed real-world application potential.",
+      "context": "Academic Reference"
+    },
+    {
+      "source": "Colleague at Cash4You",
+      "quote": "Working with Sai was a pleasure. He not only delivered great technical solutions but also helped the entire team understand the 'why' behind our AI models.",
+      "context": "Peer Review"
+    }
+  ],
+  "website_metadata": {
+    "last_updated": "2025-01-06",
+    "version": "2.0",
+    "total_experience_years": 5,
+    "current_status": "Actively seeking AI/ML Engineering opportunities",
+    "preferred_roles": [
+      "Senior AI/ML Engineer",
+      "AI Research Scientist",
+      "Machine Learning Architect",
+      "AI Product Manager",
+      "Technical Lead - AI/ML"
+    ]
+  }
+}

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sai Teja Reddy Resume Analytics</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            color: #a0a9c0;
+            font-size: 1.1rem;
+        }
+        
+        .login-section {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #1a1a2e;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .login-section.hidden {
+            display: none;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #333;
+            border-radius: 6px;
+            background: #0a0a0f;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .dashboard {
+            display: none;
+        }
+        
+        .dashboard.active {
+            display: block;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: #1a1a2e;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card p {
+            color: #a0a9c0;
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            background: #1a1a2e;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        
+        .table th {
+            color: #667eea;
+            font-weight: 600;
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .table td {
+            color: #ffffff;
+        }
+        
+        .chart-container {
+            height: 300px;
+            background: #0a0a0f;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #333;
+        }
+        
+        .error {
+            color: #f87171;
+            text-align: center;
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: rgba(248, 113, 113, 0.1);
+            border-radius: 6px;
+        }
+        
+        .success {
+            color: #4ade80;
+            text-align: center;
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: rgba(74, 222, 128, 0.1);
+            border-radius: 6px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #667eea;
+            margin: 2rem 0;
+        }
+        
+        .refresh-btn {
+            background: transparent;
+            border: 1px solid #667eea;
+            color: #667eea;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .refresh-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .logout-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #f87171;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .logout-btn:hover {
+            background: #ef4444;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .table {
+                font-size: 0.9rem;
+            }
+            
+            .logout-btn {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Section -->
+        <div class="login-section" id="loginSection">
+            <div class="header">
+                <h1>Admin Access</h1>
+                <p>Enter your credentials to view analytics</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password">Admin Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn">Login</button>
+            </form>
+            
+            <div id="loginError" class="error" style="display: none;"></div>
+        </div>
+        
+        <!-- Dashboard Section -->
+        <div class="dashboard" id="dashboard">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+            
+            <div class="header">
+                <h1>Resume Analytics Dashboard</h1>
+                <p>Real-time insights into user engagement and interactions</p>
+                <button class="refresh-btn" onclick="refreshData()">🔄 Refresh Data</button>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="loading" class="loading">
+                Loading analytics data...
+            </div>
+            
+            <!-- Statistics Cards -->
+            <div class="stats-grid" id="statsGrid" style="display: none;">
+                <div class="stat-card">
+                    <h3 id="totalVisits">-</h3>
+                    <p>Total Visits</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3 id="totalChats">-</h3>
+                    <p>Chat Interactions</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3 id="conversionRate">-</h3>
+                    <p>Conversion Rate</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3 id="recentVisits">-</h3>
+                    <p>Recent Visits (30d)</p>
+                </div>
+            </div>
+            
+            <!-- Daily Activity Chart -->
+            <div class="section" id="chartSection" style="display: none;">
+                <h2>Daily Activity (Last 7 Days)</h2>
+                <div class="chart-container">
+                    <canvas id="activityChart" width="800" height="300"></canvas>
+                </div>
+            </div>
+            
+            <!-- Top Browsers -->
+            <div class="section" id="browsersSection" style="display: none;">
+                <h2>Top Browsers</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Browser</th>
+                            <th>Visits</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="browsersTable">
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Chat Mode Analysis -->
+            <div class="section" id="chatModesSection" style="display: none;">
+                <h2>Chat Mode Usage</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mode</th>
+                            <th>Usage Count</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="chatModesTable">
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="section" id="recentActivitySection" style="display: none;">
+                <h2>Recent Activity</h2>
+                <div id="recentActivityContent">
+                    <p>Loading recent activity...</p>
+                </div>
+            </div>
+            
+            <!-- Conversations -->
+            <div class="section" id="conversationsSection" style="display: none;">
+                <h2>Recent Chat Conversations</h2>
+                <button class="refresh-btn" onclick="loadConversations()">🔄 Load Conversations</button>
+                <div id="conversationsContent">
+                    <p>Click "Load Conversations" to view recent chats</p>
+                </div>
+            </div>
+            
+            <!-- Error Section -->
+            <div id="dashboardError" class="error" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Configuration
+        const API_BASE_URL = 'https://your-backend-url.onrender.com'; // Update this with your actual backend URL
+        let authToken = null;
+        
+        // DOM Elements
+        const loginSection = document.getElementById('loginSection');
+        const dashboard = document.getElementById('dashboard');
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+        const loading = document.getElementById('loading');
+        const dashboardError = document.getElementById('dashboardError');
+        
+        // Login Handler
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            
+            try {
+                showLoading();
+                hideError(loginError);
+                
+                // Set auth token (in a real app, you'd validate this with the server)
+                authToken = `Bearer ${password}`;
+                
+                // Try to load analytics to validate credentials
+                await loadAnalytics();
+                
+                // If successful, show dashboard
+                loginSection.classList.add('hidden');
+                dashboard.classList.add('active');
+                
+            } catch (error) {
+                showError(loginError, 'Invalid password or server error');
+                authToken = null;
+            } finally {
+                hideLoading();
+            }
+        });
+        
+        // Load Analytics Data
+        async function loadAnalytics() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/analytics`, {
+                    headers: {
+                        'Authorization': authToken
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayAnalytics(data.data);
+                    showSections();
+                } else {
+                    throw new Error(data.error || 'Failed to load analytics');
+                }
+                
+            } catch (error) {
+                console.error('Analytics load error:', error);
+                showError(dashboardError, `Failed to load analytics: ${error.message}`);
+            }
+        }
+        
+        // Display Analytics Data
+        function displayAnalytics(data) {
+            // Update statistics
+            document.getElementById('totalVisits').textContent = data.overview.total_visits || 0;
+            document.getElementById('totalChats').textContent = data.overview.total_chats || 0;
+            document.getElementById('conversionRate').textContent = (data.overview.conversion_rate || 0) + '%';
+            document.getElementById('recentVisits').textContent = data.overview.recent_visits_30d || 0;
+            
+            // Update browsers table
+            updateBrowsersTable(data.top_browsers || {});
+            
+            // Update chat modes table
+            updateChatModesTable(data.chat_modes || {});
+            
+            // Update recent activity
+            updateRecentActivity(data.recent_activity || {});
+            
+            // Draw activity chart
+            drawActivityChart(data.daily_activity || {});
+        }
+        
+        // Update Browsers Table
+        function updateBrowsersTable(browsers) {
+            const tbody = document.getElementById('browsersTable');
+            tbody.innerHTML = '';
+            
+            const total = Object.values(browsers).reduce((sum, count) => sum + count, 0);
+            
+            Object.entries(browsers).forEach(([browser, count]) => {
+                const percentage = total > 0 ? ((count / total) * 100).toFixed(1) : 0;
+                const row = `
+                    <tr>
+                        <td>${browser}</td>
+                        <td>${count}</td>
+                        <td>${percentage}%</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+        
+        // Update Chat Modes Table
+        function updateChatModesTable(modes) {
+            const tbody = document.getElementById('chatModesTable');
+            tbody.innerHTML = '';
+            
+            const total = Object.values(modes).reduce((sum, count) => sum + count, 0);
+            
+            Object.entries(modes).forEach(([mode, count]) => {
+                const percentage = total > 0 ? ((count / total) * 100).toFixed(1) : 0;
+                const row = `
+                    <tr>
+                        <td>${mode.charAt(0).toUpperCase() + mode.slice(1)}</td>
+                        <td>${count}</td>
+                        <td>${percentage}%</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+        
+        // Update Recent Activity
+        function updateRecentActivity(activity) {
+            const content = document.getElementById('recentActivityContent');
+            
+            if (activity.last_visit || activity.last_chat) {
+                let html = '<div>';
+                
+                if (activity.last_visit) {
+                    const visitTime = new Date(activity.last_visit.timestamp).toLocaleString();
+                    html += `<p><strong>Last Visit:</strong> ${visitTime} from ${activity.last_visit.ip || 'Unknown'}</p>`;
+                }
+                
+                if (activity.last_chat) {
+                    const chatTime = new Date(activity.last_chat.timestamp).toLocaleString();
+                    html += `<p><strong>Last Chat:</strong> ${chatTime} in ${activity.last_chat.mode} mode</p>`;
+                }
+                
+                html += '</div>';
+                content.innerHTML = html;
+            } else {
+                content.innerHTML = '<p>No recent activity data available</p>';
+            }
+        }
+        
+        // Draw Activity Chart (Simple Canvas Implementation)
+        function drawActivityChart(dailyActivity) {
+            const canvas = document.getElementById('activityChart');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Clear canvas
+            ctx.fillStyle = '#764ba2';
+            ctx.fillRect(width - 150, 40, 15, 15);
+            ctx.fillStyle = '#fff';
+            ctx.fillText('Chats', width - 130, 52);
+        }
+        
+        // Load Conversations
+        async function loadConversations() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/conversations`, {
+                    headers: {
+                        'Authorization': authToken
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayConversations(data.conversations || []);
+                } else {
+                    throw new Error(data.error || 'Failed to load conversations');
+                }
+                
+            } catch (error) {
+                document.getElementById('conversationsContent').innerHTML = 
+                    `<p class="error">Failed to load conversations: ${error.message}</p>`;
+            }
+        }
+        
+        // Display Conversations
+        function displayConversations(conversations) {
+            const content = document.getElementById('conversationsContent');
+            
+            if (conversations.length === 0) {
+                content.innerHTML = '<p>No conversations found</p>';
+                return;
+            }
+            
+            let html = '';
+            conversations.slice(-10).reverse().forEach((conv, index) => {
+                const time = new Date(conv.timestamp).toLocaleString();
+                html += `
+                    <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-radius: 8px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-weight: bold; color: #667eea;">${conv.mode.toUpperCase()} Mode</span>
+                            <span style="color: #a0a9c0; font-size: 0.9rem;">${time}</span>
+                        </div>
+                        <div style="margin-bottom: 0.5rem;">
+                            <strong style="color: #4ade80;">User:</strong> ${conv.message}
+                        </div>
+                        <div>
+                            <strong style="color: #667eea;">AI:</strong> ${conv.response.substring(0, 200)}${conv.response.length > 200 ? '...' : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            content.innerHTML = html;
+        }
+        
+        // Utility Functions
+        function showLoading() {
+            loading.style.display = 'block';
+        }
+        
+        function hideLoading() {
+            loading.style.display = 'none';
+        }
+        
+        function showError(element, message) {
+            element.textContent = message;
+            element.style.display = 'block';
+        }
+        
+        function hideError(element) {
+            element.style.display = 'none';
+        }
+        
+        function showSections() {
+            document.getElementById('statsGrid').style.display = 'grid';
+            document.getElementById('chartSection').style.display = 'block';
+            document.getElementById('browsersSection').style.display = 'block';
+            document.getElementById('chatModesSection').style.display = 'block';
+            document.getElementById('recentActivitySection').style.display = 'block';
+            document.getElementById('conversationsSection').style.display = 'block';
+        }
+        
+        function refreshData() {
+            hideError(dashboardError);
+            showLoading();
+            loadAnalytics().finally(() => hideLoading());
+        }
+        
+        function logout() {
+            authToken = null;
+            loginSection.classList.remove('hidden');
+            dashboard.classList.remove('active');
+            document.getElementById('password').value = '';
+            hideError(loginError);
+            hideError(dashboardError);
+        }
+        
+        // Auto-refresh every 5 minutes
+        setInterval(() => {
+            if (authToken && dashboard.classList.contains('active')) {
+                loadAnalytics();
+            }
+        }, 5 * 60 * 1000);
+        
+        // Check if already logged in (for development)
+        document.addEventListener('DOMContentLoaded', () => {
+            // You can uncomment this line for easy testing
+            // document.getElementById('password').value = 'your-admin-password';
+        });
+    </script>
+</body>
+</html>

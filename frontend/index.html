@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Teja Reddy - AI Engineer | Enter the Future</title>
+    <meta name="description" content="Welcome to Sai Teja Reddy's AI-powered interactive resume. Experience the future of digital portfolios.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            cursor: none;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #000 100%);
+        }
+
+        /* Animated Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 4s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #00d4ff, #9d4edd);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) translateX(0px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Main Content */
+        .intro-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(102, 126, 234, 0.5); }
+            to { text-shadow: 0 0 40px rgba(102, 126, 234, 0.8), 0 0 60px rgba(157, 78, 221, 0.6); }
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .enter-btn {
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            z-index: 11;
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .enter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .enter-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Sound Control */
+        .sound-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 15;
+        }
+
+        .sound-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .sound-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease-out;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(102, 126, 234, 0.3);
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #667eea;
+            font-size: 1.2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #667eea, #764ba2);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.hover {
+            transform: scale(2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo { font-size: 2.5rem; }
+            .tagline { font-size: 1.2rem; }
+            .description { font-size: 1rem; padding: 0 1rem; }
+            .enter-btn { padding: 12px 30px; font-size: 1.1rem; }
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.3s; animation-fill-mode: both; }
+        .delay-2 { animation-delay: 0.6s; animation-fill-mode: both; }
+        .delay-3 { animation-delay: 0.9s; animation-fill-mode: both; }
+        .delay-4 { animation-delay: 1.2s; animation-fill-mode: both; }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Initializing AI Experience...</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Animated Background -->
+    <div class="stars" id="stars"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="intro-content">
+            <h1 class="logo fade-in">SAI TEJA REDDY</h1>
+            <p class="tagline fade-in delay-1">AI/ML Engineer • Innovation Catalyst • Future Builder</p>
+            <p class="description fade-in delay-2">
+                Welcome to an immersive experience where artificial intelligence meets human creativity. 
+                You're about to explore a next-generation interactive resume that showcases 5+ years of 
+                AI/ML engineering expertise through cutting-edge technology and intelligent interactions.
+            </p>
+            <button class="enter-btn fade-in delay-3" onclick="enterResume()">
+                🚀 Launch Experience
+            </button>
+        </div>
+    </div>
+
+    <!-- Sound Control -->
+    <div class="sound-control">
+        <button class="sound-btn fade-in delay-4" onclick="toggleSound()" id="soundBtn">
+            🔊
+        </button>
+    </div>
+
+    <script>
+        // Global variables
+        let soundEnabled = true;
+        let ambientSound = null;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            createParticles();
+            initCustomCursor();
+            initSounds();
+            
+            // Hide loading screen after 2 seconds
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 2000);
+        });
+
+        // Create animated stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 150;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 20;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Custom cursor
+        function initCustomCursor() {
+            const cursor = document.getElementById('cursor');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+            });
+            
+            // Add hover effects
+            document.querySelectorAll('button, a').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hover');
+                });
+                element.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hover');
+                });
+            });
+        }
+
+        // Initialize sounds
+        function initSounds() {
+            // Create ambient space sound
+            ambientSound = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSMFl');
+            ambientSound.loop = true;
+            ambientSound.volume = 0.3;
+        }
+
+        // Toggle sound
+        function toggleSound() {
+            const soundBtn = document.getElementById('soundBtn');
+            
+            if (soundEnabled) {
+                soundEnabled = false;
+                soundBtn.textContent = '🔇';
+                if (ambientSound) ambientSound.pause();
+            } else {
+                soundEnabled = true;
+                soundBtn.textContent = '🔊';
+                if (ambientSound) ambientSound.play().catch(e => console.log('Audio play failed:', e));
+            }
+        }
+
+        // Enter main resume
+        function enterResume() {
+            // Play click sound
+            if (soundEnabled) {
+                const clickSound = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSMF');
+                clickSound.volume = 0.5;
+                clickSound.play().catch(e => console.log('Click sound failed:', e));
+            }
+            
+            // Add transition effect
+            document.body.style.transition = 'opacity 1s ease-out';
+            document.body.style.opacity = '0';
+            
+            // Navigate to main resume after transition
+            setTimeout(() => {
+                window.location.href = 'main.html';
+            }, 1000);
+        }
+
+        // Track analytics
+        function trackEvent(eventName, eventData = {}) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventData);
+            }
+            
+            // Custom analytics
+            fetch('/api/analytics/track', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    event: eventName,
+                    data: eventData,
+                    timestamp: new Date().toISOString(),
+                    page: 'landing'
+                })
+            }).catch(e => console.log('Analytics tracking failed:', e));
+        }
+
+        // Track page load
+        window.addEventListener('load', () => {
+            trackEvent('page_view', {
+                page_title: 'Landing Page',
+                user_agent: navigator.userAgent
+            });
+        });
+
+        // Track sound toggle
+        document.getElementById('soundBtn').addEventListener('click', () => {
+            trackEvent('sound_toggle', {
+                enabled: !soundEnabled
+            });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                enterResume();
+            }
+            if (e.key === 'm' || e.key === 'M') {
+                e.preventDefault();
+                toggleSound();
+            }
+        });
+
+        // Prevent right-click context menu for immersive experience
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        // Auto-play ambient sound on user interaction
+        document.addEventListener('click', () => {
+            if (soundEnabled && ambientSound && ambientSound.paused) {
+                ambientSound.play().catch(e => console.log('Ambient sound failed:', e));
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>

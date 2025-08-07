@@ -1,0 +1,632 @@
+/* frontend/assets/css/animations.css */
+
+/* Advanced Animations for AI Resume Website */
+
+/* Particle System */
+@keyframes particle-drift {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Neural Network Animation */
+.neural-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.neural-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #667eea, #764ba2);
+    border-radius: 50%;
+    animation: neural-pulse 4s ease-in-out infinite;
+}
+
+@keyframes neural-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+.neural-connection {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #667eea, transparent);
+    animation: neural-flow 3s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes neural-flow {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* AI Glitch Effects */
+@keyframes ai-glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.ai-glitch-text {
+    position: relative;
+    animation: ai-glitch 0.3s ease-in-out;
+}
+
+.ai-glitch-text::before,
+.ai-glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ai-glitch-text::before {
+    animation: glitch-1 0.3s ease-in-out;
+    color: #00ffff;
+    z-index: -1;
+}
+
+.ai-glitch-text::after {
+    animation: glitch-2 0.3s ease-in-out;
+    color: #ff0080;
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(2px, 2px);
+    }
+    40% {
+        transform: translate(2px, -2px);
+    }
+    60% {
+        transform: translate(-2px, 2px);
+    }
+    80% {
+        transform: translate(-2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Matrix Rain Effect */
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #00ff41;
+    animation: matrix-fall linear infinite;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Holographic Effect */
+.holographic {
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: holographic-shift 3s ease-in-out infinite;
+}
+
+@keyframes holographic-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Data Stream Animation */
+.data-stream {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-stream::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(102, 126, 234, 0.2),
+        transparent
+    );
+    animation: data-flow 2s linear infinite;
+}
+
+@keyframes data-flow {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Circuit Board Animation */
+.circuit-board {
+    position: relative;
+}
+
+.circuit-board::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 98px,
+            rgba(102, 126, 234, 0.1) 100px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 98px,
+            rgba(102, 126, 234, 0.1) 100px
+        );
+    animation: circuit-pulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes circuit-pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Typing Animation */
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid #667eea;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #667eea;
+    }
+}
+
+/* Morphing Shapes */
+.morph-shape {
+    animation: morph 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 20% 80% 30% 70% / 50% 60% 40% 50%;
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        border-radius: 50% 50% 80% 20% / 40% 70% 30% 60%;
+        transform: rotate(90deg) scale(1.1);
+    }
+    50% {
+        border-radius: 80% 20% 50% 50% / 60% 30% 70% 40%;
+        transform: rotate(180deg) scale(0.9);
+    }
+    75% {
+        border-radius: 30% 70% 20% 80% / 70% 40% 60% 30%;
+        transform: rotate(270deg) scale(1.05);
+    }
+}
+
+/* AI Processing Animation */
+.ai-processing {
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-processing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(
+            45deg,
+            transparent 40%,
+            rgba(102, 126, 234, 0.1) 50%,
+            transparent 60%
+        );
+    animation: ai-scan 2s linear infinite;
+}
+
+@keyframes ai-scan {
+    0% {
+        transform: translateX(-100%) translateY(-100%);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%);
+    }
+}
+
+/* Quantum Particle Effect */
+.quantum-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #667eea;
+    border-radius: 50%;
+    animation: quantum-movement 8s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes quantum-movement {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    25% {
+        transform: translate(50px, -30px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-20px, 40px) rotate(180deg);
+    }
+    75% {
+        transform: translate(30px, -50px) rotate(270deg);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Loading Spinner Variations */
+.ai-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(102, 126, 234, 0.3);
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: ai-spin 1s linear infinite;
+    position: relative;
+}
+
+.ai-spinner::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 4px solid transparent;
+    border-top: 4px solid #764ba2;
+    border-radius: 50%;
+    animation: ai-spin-reverse 1.5s linear infinite;
+}
+
+@keyframes ai-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ai-spin-reverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Interactive Hover Effects */
+.interactive-element {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.interactive-element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.interactive-element::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.interactive-element:hover::before {
+    opacity: 1;
+}
+
+/* Scroll-triggered Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate.slide-left {
+    transform: translateX(-50px);
+}
+
+.scroll-animate.slide-left.visible {
+    transform: translateX(0);
+}
+
+.scroll-animate.slide-right {
+    transform: translateX(50px);
+}
+
+.scroll-animate.slide-right.visible {
+    transform: translateX(0);
+}
+
+.scroll-animate.scale-up {
+    transform: scale(0.8);
+}
+
+.scroll-animate.scale-up.visible {
+    transform: scale(1);
+}
+
+/* Performance Optimizations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .particle-effect,
+    .neural-node,
+    .quantum-particle {
+        display: none;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .matrix-rain,
+    .neural-bg,
+    .quantum-particle {
+        display: none; /* Disable heavy animations on mobile */
+    }
+    
+    .interactive-element:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .ai-processing::before,
+    .data-stream::before,
+    .holographic {
+        animation: none;
+    }
+}
+
+/* High Performance Mode */
+.performance-mode .matrix-rain,
+.performance-mode .neural-bg,
+.performance-mode .quantum-particle,
+.performance-mode .particle-effect {
+    display: none;
+}
+
+.performance-mode .ai-processing::before,
+.performance-mode .data-stream::before,
+.performance-mode .holographic {
+    animation: none;
+}
+
+/* Dark Theme Animations */
+.dark-theme .neural-node {
+    background: radial-gradient(circle, #00d4ff, #9d4edd);
+}
+
+.dark-theme .matrix-column {
+    color: #00ff88;
+    text-shadow: 0 0 5px #00ff88;
+}
+
+.dark-theme .data-stream::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 212, 255, 0.3),
+        transparent
+    );
+}
+
+/* Light Theme Animations */
+.light-theme .neural-node {
+    background: radial-gradient(circle, #667eea, #764ba2);
+    opacity: 0.8;
+}
+
+.light-theme .matrix-rain {
+    opacity: 0.05;
+}
+
+.light-theme .data-stream::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(102, 126, 234, 0.15),
+        transparent
+    );
+}
+
+/* Animation State Classes */
+.animate-pause {
+    animation-play-state: paused !important;
+}
+
+.animate-play {
+    animation-play-state: running !important;
+}
+
+.animate-slow {
+    animation-duration: 4s !important;
+}
+
+.animate-fast {
+    animation-duration: 0.5s !important;
+}
